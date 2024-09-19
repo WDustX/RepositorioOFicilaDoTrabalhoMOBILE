@@ -71,8 +71,13 @@ function Favorito({ navigation }) {
     }, []);
 
     return (
+        <ScrollView style={styles.scrollContainer}>
         <View style={styles.container}>
-            <Text style={styles.titulo}>Favoritos</Text>
+            
+            <Text style={styles.headerText}>Favoritos</Text>
+            <View style={styles.detailsContainer}>
+
+            
             {favorites.length > 0 ? (
                 favorites.map((fav, index) => (
                     <TouchableOpacity 
@@ -93,7 +98,9 @@ function Favorito({ navigation }) {
             ) : (
                 <Text style={styles.emptyMessage}>Nenhum favorito encontrado.</Text>
             )}
-        </View>
+            </View>
+            </View>
+        </ScrollView>
     );
 }
 
